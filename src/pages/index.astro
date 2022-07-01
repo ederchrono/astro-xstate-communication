@@ -1,0 +1,17 @@
+---
+import ReactCounter from '../components/ReactCounter.jsx';
+import VueCounter from '../components/VueCounter.vue';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue and React getting along</title>
+</head>
+<body>
+	<ReactCounter client:load />
+	<VueCounter client:load />
+</body>
+</html>
