@@ -1,6 +1,7 @@
 ---
 import ReactCounter from '../components/ReactCounter.jsx';
 import VueCounter from '../components/VueCounter.vue';
+import SvelteCounter from '../components/SvelteCounter.svelte';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,10 @@ import VueCounter from '../components/VueCounter.vue';
 	<title>Vue and React getting along</title>
 </head>
 <body>
-	<ReactCounter client:load />
-	<VueCounter client:load />
+	<div style="display:flex; gap: 10px;">
+		<ReactCounter client:load />
+		<VueCounter client:load />
+		<SvelteCounter client:load />
+	</div>
 </body>
 </html>

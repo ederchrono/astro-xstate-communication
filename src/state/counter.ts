@@ -2,14 +2,12 @@ import { createMachine, interpret } from 'xstate';
 
 
 const counterMachine = 
-/** @xstate-layout N4IgpgJg5mDOIC5QGMD2BXAdgFzAJwDoBDZbASwDcwBiMzZPMAWzB0VAAdVYzzVN2IAB6IAtAEYAzAFYCADgDskgCwK5k8QE4lAJgAMygDQgAnmJ3idBHXM0A2PXL3SFey3bsBfT8bRZchCTkVNQQYAzMrNiCXDx8AkjCYsqakgR2cpaZKnr2MtLGZgiiFlY29nqSCvaZ1eLevhg4+MSklDQQZLBEAEYANmAx3Lxk-IIixToKVsqZ0urVFvbiBaZidgoE9pqa0pJTmso2tt4+IJioYfCJfs2BbVRDcaMJoBMlcnIEynbSu3rVaZuH6FMRaTTWWx2SzScr2FwNEC3AIETrdfqQJ4jMaJd46bQERyuH4KZQqORTUEIfEEab48S5Fw6I7iUmI5H4LHxcZiaSs9KZGxSZS5OySOxUj6ycp-HR2Q7MgGnTxAA */
+/** @xstate-layout N4IgpgJg5mDOIC5QGMD2BXAdgFzAJwDoBDZbASwDcwBiMzZPMAWzB0VAAdVYzzVN2IAB6IAtAEYAzAFYCADgDskgCwK5k8QE4lAJgAMygDQgAnmJ3idBHXM0A2PXL3SFey3bsBfT8bRZchCTkVNQQYAzMrNiCXDx8AkjCYsqakgR2cpaZKnr2MtLGZgiiFlY29nqSCvaZ1eLevhg4+MSklDQQZLBEAEYANmAx3Lxk-IIixSpp0pJOMwbKjpo6hWJ2CgT2mpozOtXKNrYNIH7NhJ3d-ZDUrL0DQ3GjCaATJXpWuToOlm7KLkamNYbLY7SR7TQHORHY6YVBheCJU4BVrBQaJWIjMaJV6HAjKOzSHZ6aoKfTifGrYpaTTWWx2SzScr2FzHJEtC53SAPTHPJLFHTaAiOVz4hTKFRyPaUgUEUkC8S5Fw6A7iMWspoBbnxcZiaSq9KZGxSRZ5OyUkpyWRfXIpFQ2aQs7yeIA */
 createMachine({
+  context: { count: 0 },
+  tsTypes: {} as import("./counter.typegen").Typegen0,
   id: "counter",
   initial: "active",
-  tsTypes: {} as import("./counter.typegen").Typegen0,
-  context: {
-    count: 0
-  },
   states: {
     active: {
       on: {
@@ -24,7 +22,13 @@ createMachine({
         },
       },
     },
-    disabled: {},
+    disabled: {
+      on: {
+        enable: {
+          target: "active",
+        },
+      },
+    },
   },
 }, {
   actions: {
