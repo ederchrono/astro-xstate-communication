@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useMachine } from '@xstate/react';
+import { counterMachine } from '../state/counter';
 
 function ReactCounter() {
-  const [count, setCount] = useState(0);
+  const [state, send] = useMachine(counterMachine);
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <p>state: {state.value}</p>
+      <p>React counter: {state.context.count}</p>
+      <button onClick={() => send('decrement')}>-</button>
+      <button onClick={() => send('increment')}>+</button>
+      <button onClick={() => send('disable')}>Disable</button>
     </div>
   );
 }
