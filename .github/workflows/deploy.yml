@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: pnpm i
-      - run: pnpm run build
+      - run: pnpm run build:github
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

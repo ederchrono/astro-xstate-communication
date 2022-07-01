@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:github": "astro build  --config astro-prod.config.mjs",
     "preview": "astro preview"
   },
   "devDependencies": {
