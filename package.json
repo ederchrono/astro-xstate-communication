@@ -12,6 +12,7 @@
     "@astrojs/react": "^0.2.0",
     "@astrojs/vue": "^0.2.0",
     "@xstate/react": "^3.0.0",
+    "@xstate/svelte": "^2.0.0",
     "@xstate/vue": "^2.0.0",
     "astro": "^1.0.0-beta.60",
     "react": "^18.2.0",

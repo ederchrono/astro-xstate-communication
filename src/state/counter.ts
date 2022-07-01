@@ -1,4 +1,4 @@
-import { createMachine } from 'xstate';
+import { createMachine, interpret } from 'xstate';
 
 
 const counterMachine = 
@@ -6,6 +6,7 @@ const counterMachine =
 createMachine({
   id: "counter",
   initial: "active",
+  tsTypes: {} as import("./counter.typegen").Typegen0,
   context: {
     count: 0
   },
@@ -36,4 +37,9 @@ createMachine({
   }
 })
 
-export { counterMachine };
+// global instance of the machine
+const service = interpret(counterMachine).start()
+const getInstance = () => {
+  return service
+}
+export { getInstance };

@@ -1,10 +1,10 @@
 <script lang="ts">
-import { useMachine } from '@xstate/vue';
-import { counterMachine } from '../state/counter';
+import { useActor, useMachine } from '@xstate/vue';
+import { getInstance } from '../state/counter';
 
 export default {
   setup() {
-    const { state, send } = useMachine(counterMachine);
+    const { state, send } = useActor(getInstance());
     return {
       state,
       send,

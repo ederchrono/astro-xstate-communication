@@ -633,6 +633,11 @@
     use-isomorphic-layout-effect "^1.0.0"
     use-sync-external-store "^1.0.0"
 
+"@xstate/svelte@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@xstate/svelte/-/svelte-2.0.0.tgz#b10c6b796c7205d0f22a7d6d8b8dd6291b346a9e"
+  integrity sha512-051btq174/fc0lsFUsl5xLbpzEGF4lg6unV1uimjQwKxYTwF2GZXKlcQx2dW7WYpqeH0CWoKvKtb2qIBsnxq5A==
+
 "@xstate/vue@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@xstate/vue/-/vue-2.0.0.tgz#bb95f91600c5fad2e8a72f872cb8f69b3b154e10"

@@ -1,8 +1,8 @@
-import { useMachine } from '@xstate/react';
-import { counterMachine } from '../state/counter';
+import { useActor, useMachine } from '@xstate/react';
+import { getInstance } from '../state/counter';
 
 function ReactCounter() {
-  const [state, send] = useMachine(counterMachine);
+  const [state, send] = useActor(getInstance());
   return (
     <div>
       <p>state: {state.value}</p>
